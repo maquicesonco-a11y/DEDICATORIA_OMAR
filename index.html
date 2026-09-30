@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Omar 💙</title>
+
+<style>
+
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top, #102d59 0%, #06152e 40%, #020814 100%);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =====================================================
+   PORTADA
+===================================================== */
+
+#inicio {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at center, #123b72 0%, #071b38 45%, #020711 100%);
+
+    z-index: 9999;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+#inicio.oculto {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* luces */
+
+.luz {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.5;
+    animation: luzMovimiento 5s infinite alternate;
+}
+
+.luz1 {
+    width: 250px;
+    height: 250px;
+    background: #008cff;
+    top: 5%;
+    left: 5%;
+}
+
+.luz2 {
+    width: 300px;
+    height: 300px;
+    background: #4d00ff;
+    bottom: 5%;
+    right: 5%;
+}
+
+@keyframes luzMovimiento {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.subtitulo-portada {
+    font-size: 18px;
+    color: #b9dfff;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    z-index: 2;
+}
+
+.omar {
+    font-size: clamp(60px, 12vw, 130px);
+    letter-spacing: 12px;
+    color: #ffffff;
+
+    text-shadow:
+        0 0 10px #168cff,
+        0 0 25px #168cff,
+        0 0 50px #0066ff;
+
+    animation: brilloNombre 2s infinite alternate;
+
+    z-index: 2;
+}
+
+@keyframes brilloNombre {
+    from {
+        text-shadow:
+            0 0 10px #168cff,
+            0 0 25px #168cff;
+    }
+
+    to {
+        text-shadow:
+            0 0 20px #65b8ff,
+            0 0 45px #168cff,
+            0 0 70px #0066ff;
+    }
+}
+
+.frase-portada {
+    max-width: 600px;
+    padding: 0 20px;
+    margin: 15px 0;
+    color: #d7ebff;
+    font-size: 17px;
+    z-index: 2;
+}
+
+/* =====================================================
+   AUTITO DE PORTADA
+===================================================== */
+
+.autito-portada {
+    width: 280px;
+    max-width: 70vw;
+
+    display: block;
+
+    margin: 25px auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 8px #168cff)
+        drop-shadow(0 0 20px #0066ff);
+
+    animation: autoPortada 2.5s ease-in-out infinite;
+
+    z-index: 2;
+}
+
+@keyframes autoPortada {
+
+    0% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-14px) rotate(2deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+}
+
+/* =====================================================
+   BOTÓN ENTRAR
+===================================================== */
+
+#entrar {
+
+    margin-top: 20px;
+
+    padding: 16px 42px;
+
+    border: 2px solid #55b5ff;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087ee8,
+            #0047a8
+        );
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 10px #168cff,
+        0 0 25px rgba(22, 140, 255, 0.7);
+
+    transition: 0.3s;
+
+    z-index: 5;
+}
+
+#entrar:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 20px #55b5ff,
+        0 0 45px #168cff;
+}
+
+/* =====================================================
+   PÁGINA PRINCIPAL
+===================================================== */
+
+#pagina {
+    display: none;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 100px;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    position: relative;
+}
+
+.hero h2 {
+    font-size: clamp(35px, 7vw, 70px);
+
+    color: white;
+
+    text-shadow:
+        0 0 15px #168cff,
+        0 0 35px #0066ff;
+
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    color: #d8eaff;
+}
+
+/* =====================================================
+   SECCIONES
+===================================================== */
+
+.seccion {
+    width: 92%;
+    max-width: 1000px;
+
+    margin: 60px auto;
+
+    padding: 45px 30px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 53, 99, 0.72),
+            rgba(3, 15, 32, 0.82)
+        );
+
+    border: 1px solid rgba(91, 183, 255, 0.4);
+
+    box-shadow:
+        0 0 25px rgba(0, 119, 255, 0.25),
+        inset 0 0 30px rgba(0, 100, 255, 0.08);
+
+    text-align: center;
+
+    backdrop-filter: blur(8px);
+}
+
+.seccion h2 {
+    font-size: 34px;
+
+    margin-bottom: 25px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 10px #168cff,
+        0 0 25px #0066ff;
+}
+
+.seccion p {
+    color: #dceeff;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    margin: 12px auto;
+
+    max-width: 750px;
+}
+
+/* =====================================================
+   CARTA
+===================================================== */
+
+.carta {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15, 45, 82, 0.95),
+            rgba(4, 18, 38, 0.95)
+        );
+
+    border-left: 5px solid #168cff;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    text-align: left;
+
+    box-shadow:
+        0 0 20px rgba(22, 140, 255, 0.25);
+}
+
+.carta p {
+    font-size: 18px;
+
+    line-height: 2;
+
+    color: #e5f3ff;
+}
+
+.firma {
+    text-align: right;
+
+    margin-top: 25px;
+
+    color: #65b8ff !important;
+
+    font-weight: bold;
+}
+
+/* =====================================================
+   RAMO
+===================================================== */
+
+.ramo-contenedor {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 430px;
+
+    margin-top: 20px;
+}
+
+.ramo {
+
+    width: 430px;
+
+    max-width: 75vw;
+
+    display: block;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 10px rgba(22, 140, 255, 0.6))
+        drop-shadow(0 0 30px rgba(0, 102, 255, 0.3));
+
+    animation: ramoFlota 4s ease-in-out infinite;
+
+    z-index: 2;
+}
+
+@keyframes ramoFlota {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+/* =====================================================
+   AUTOS ALREDEDOR DEL RAMO
+===================================================== */
+
+.autito-imagen {
+
+    position: absolute;
+
+    width: 120px;
+
+    max-width: 22vw;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 8px #168cff);
+
+    z-index: 3;
+
+    animation: autoFlota 3s ease-in-out infinite;
+}
+
+.autito1 {
+    left: 4%;
+    top: 20%;
+    transform: rotate(-12deg);
+}
+
+.autito2 {
+    right: 4%;
+    top: 35%;
+    transform: rotate(12deg);
+    animation-delay: 1s;
+}
+
+.autito3 {
+    left: 12%;
+    bottom: 5%;
+    transform: rotate(8deg);
+    animation-delay: 1.7s;
+}
+
+@keyframes autoFlota {
+
+    0% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -12px;
+    }
+
+    100% {
+        translate: 0 0;
+    }
+
+}
+
+/* =====================================================
+   DEDICATORIAS
+===================================================== */
+
+.dedicatorias {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 20px;
+
+    margin-top: 30px;
+}
+
+.dedicatoria {
+
+    padding: 28px 20px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 72, 130, 0.75),
+            rgba(4, 20, 42, 0.9)
+        );
+
+    border: 1px solid rgba(82, 178, 255, 0.45);
+
+    box-shadow:
+        0 0 18px rgba(0, 125, 255, 0.2);
+
+    transition: 0.4s;
+}
+
+.dedicatoria:hover {
+
+    transform:
+        translateY(-8px)
+        scale(1.02);
+
+    box-shadow:
+        0 0 30px rgba(22, 140, 255, 0.5);
+}
+
+.dedicatoria .icono {
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.dedicatoria p {
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+/* =====================================================
+   OSITOS
+===================================================== */
+
+.ositos {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+    margin: 30px 0;
+
+    flex-wrap: wrap;
+}
+
+.osito {
+
+    font-size: 90px;
+
+    filter:
+        drop-shadow(0 0 10px #168cff);
+
+    animation: osito 2.5s ease-in-out infinite;
+}
+
+.osito:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+@keyframes osito {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+/* =====================================================
+   PISTA DE AUTOS
+===================================================== */
+
+.pista {
+
+    position: relative;
+
+    height: 220px;
+
+    margin-top: 35px;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            #101820 0px,
+            #101820 35px,
+            #18232d 36px,
+            #18232d 70px
+        );
+
+    border:
+        3px solid #2c91dc;
+
+    box-shadow:
+        inset 0 0 30px #000,
+        0 0 20px rgba(22, 140, 255, 0.4);
+}
+
+/* línea de pista */
+
+.pista::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 0;
+
+    width: 100%;
+
+    border-top:
+        5px dashed #d9ecff;
+
+    opacity: 0.7;
+}
+
+/* autos pista */
+
+.auto-pista {
+
+    position: absolute;
+
+    width: 115px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 8px #168cff);
+
+    animation:
+        correr 8s linear infinite;
+}
+
+.auto-pista:nth-child(1) {
+    top: 20px;
+    animation-delay: 0s;
+}
+
+.auto-pista:nth-child(2) {
+    top: 80px;
+    animation-delay: 2s;
+}
+
+.auto-pista:nth-child(3) {
+    top: 145px;
+    animation-delay: 4s;
+}
+
+@keyframes correr {
+
+    from {
+        left: -150px;
+    }
+
+    to {
+        left: 110%;
+    }
+
+}
+
+/* =====================================================
+   SOBRE
+===================================================== */
+
+.sobre-contenedor {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-top: 30px;
+}
+
+.sobre {
+
+    width: 300px;
+
+    max-width: 80vw;
+
+    min-height: 190px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b4e91,
+            #052b55
+        );
+
+    border: 2px solid #65b8ff;
+
+    border-radius: 12px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(22, 140, 255, 0.5);
+
+    transition: 0.5s;
+}
+
+.sobre:hover {
+
+    transform: scale(1.04);
+
+    box-shadow:
+        0 0 35px rgba(22, 140, 255, 0.8);
+}
+
+.sello {
+
+    font-size: 45px;
+}
+
+.texto-sobre {
+
+    margin-top: 20px;
+
+    color: #bfe5ff;
+
+    font-size: 16px;
+}
+
+/* mensaje */
+
+.mensaje {
+
+    display: none;
+
+    margin-top: 30px;
+
+    max-width: 700px;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 58, 105, 0.9),
+            rgba(3, 18, 37, 0.95)
+        );
+
+    border: 1px solid #55b5ff;
+
+    box-shadow:
+        0 0 30px rgba(22, 140, 255, 0.35);
+
+    animation:
+        aparecerMensaje 0.8s ease;
+}
+
+.mensaje.abierto {
+    display: block;
+}
+
+@keyframes aparecerMensaje {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.mensaje p {
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    color: #e5f4ff;
+}
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final {
+
+    text-align: center;
+
+    padding: 80px 20px;
+}
+
+.final h2 {
+
+    font-size: clamp(40px, 8vw, 75px);
+
+    color: white;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 0 15px #168cff,
+        0 0 35px #0066ff;
+}
+
+.final p {
+
+    margin-top: 20px;
+
+    font-size: 19px;
+
+    color: #cce8ff;
+}
+
+/* =====================================================
+   FLORES Y ESTRELLAS
+===================================================== */
+
+.flotante {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 100;
+
+    color: #66baff;
+
+    text-shadow:
+        0 0 8px #168cff,
+        0 0 20px #168cff;
+
+    animation:
+        subir 7s linear forwards;
+}
+
+@keyframes subir {
+
+    0% {
+        transform:
+            translateY(100vh)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-100px)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .omar {
+        font-size: 60px;
+        letter-spacing: 6px;
+    }
+
+    .autito-portada {
+        width: 220px;
+    }
+
+    .hero {
+        min-height: 65vh;
+    }
+
+    .hero h2 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .seccion {
+        padding: 30px 18px;
+    }
+
+    .seccion h2 {
+        font-size: 28px;
+    }
+
+    .seccion p {
+        font-size: 16px;
+    }
+
+    .carta {
+        padding: 22px;
+    }
+
+    .ramo-contenedor {
+        min-height: 330px;
+    }
+
+    .ramo {
+        width: 300px;
+    }
+
+    .autito-imagen {
+        width: 85px;
+    }
+
+    .autito1 {
+        left: 0;
+    }
+
+    .autito2 {
+        right: 0;
+    }
+
+    .autito3 {
+        left: 5%;
+    }
+
+    .osito {
+        font-size: 65px;
+    }
+
+    .pista {
+        height: 190px;
+    }
+
+    .auto-pista {
+        width: 85px;
+    }
+
+}
+
+/* =====================================================
+   OCULTAR SCROLL HORIZONTAL
+===================================================== */
+
+body {
+    overflow-x: hidden;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     PORTADA
+===================================================== -->
+
+<section id="inicio">
+
+    <div class="luz luz1"></div>
+    <div class="luz luz2"></div>
+
+    <p class="subtitulo-portada">
+        Una pequeña sorpresa para
+    </p>
+
+    <h1 class="omar">
+        OMAR
+    </h1>
+
+    <p class="frase-portada">
+        Porque una amistad bonita también merece
+        un detalle especial 💙
+    </p>
+
+    <!-- AUTITO DE PORTADA -->
+    <img
+        src="./imagenes/imagen3.PNG.png"
+        alt="Autito especial para Omar"
+        class="autito-portada"
+    >
+
+    <button id="entrar">
+        ✨ ENTRAR ✨
+    </button>
+
+</section>
+
+
+<!-- =====================================================
+     PÁGINA PRINCIPAL
+===================================================== -->
+
+<main id="pagina">
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h2>
+            Para ti, Omar 💙
+        </h2>
+
+        <p>
+            Hice este pequeño espacio pensando en nuestra amistad,
+            en los buenos momentos y en todas esas pequeñas cosas
+            que hacen especial tener a una persona como tú como amigo.
+        </p>
+
+    </section>
+
+
+    <!-- =================================================
+         CARTA
+    ================================================== -->
+
+    <section class="seccion">
+
+        <h2>
+            💌 Unas palabras para ti
+        </h2>
+
+        <div class="carta">
+
+            <p>
+                Omar, quería hacerte algo especial y que tuviera
+                un poquito de todo lo que me recuerda a ti.
+            </p>
+
+            <p>
+                A veces no hace falta una ocasión enorme para
+                decirle a alguien que aprecias mucho su amistad.
+                Por eso hice esto, simplemente porque sí.
+            </p>
+
+            <p>
+                Me alegra mucho haber compartido tantos momentos,
+                conversaciones, risas y ocurrencias contigo.
+                Son esas cosas sencillas las que terminan
+                convirtiéndose en recuerdos muy bonitos.
+            </p>
+
+            <p>
+                Espero que cuando veas esta página puedas
+                sonreír un poquito y recordar que tienes una
+                amiga que valora muchísimo tu amistad. 💙
+            </p>
+
+            <p class="firma">
+                Con mucho cariño,<br>
+                Mariny 💙
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         RAMO
+    ================================================== -->
+
+    <section class="seccion">
+
+        <h2>
+            💐 Un pequeño detalle para ti
+        </h2>
+
+        <p>
+            No podían faltar unas flores para acompañar
+            este pequeño detalle.
+        </p>
+
+
+        <div class="ramo-contenedor">
+
+            <!-- RAMO -->
+            <img
+                src="./imagenes/imagen1.PNG.png"
+                alt="Ramo de flores para Omar"
+                class="ramo"
+            >
+
+            <!-- AUTOS -->
+            <img
+                src="./imagenes/imagen2.png.png"
+                alt="Autito"
+                class="autito-imagen autito1"
+            >
+
+            <img
+                src="./imagenes/imagen2.png.png"
+                alt="Autito"
+                class="autito-imagen autito2"
+            >
+
+            <img
+                src="./imagenes/imagen2.png.png"
+                alt="Autito"
+                class="autito-imagen autito3"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         DEDICATORIAS
+    ================================================== -->
+
+    <section class="seccion">
+
+        <h2>
+            💙 Para ti
+        </h2>
+
+        <div class="dedicatorias">
+
+
+            <div class="dedicatoria">
+
+                <div class="icono">
+                    💙
+                </div>
+
+                <p>
+                    Me alegra mucho tenerte como amigo
+                    y compartir tantos momentos contigo.
+                </p>
+
+            </div>
+
+
+            <div class="dedicatoria">
+
+                <div class="icono">
+                    ✨
+                </div>
+
+                <p>
+                    Espero que este pequeño detalle
+                    te saque una sonrisa cada vez que lo veas.
+                </p>
+
+            </div>
+
+
+            <div class="dedicatoria">
+
+                <div class="icono">
+                    🧸
+                </div>
+
+                <p>
+                    Este osito lleva un abrazo de amistad
+                    especialmente para ti.
+                </p>
+
+            </div>
+
+
+            <div class="dedicatoria">
+
+                <div class="icono">
+                    🚗
+                </div>
+
+                <p>
+                    Y claro que no podían faltar unos autitos,
+                    porque quería que esto tuviera
+                    un poquito de tu estilo.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         OSITOS
+    ================================================== -->
+
+    <section class="seccion">
+
+        <h2>
+            🧸 Un par de abrazos
+        </h2>
+
+        <div class="ositos">
+
+            <div class="osito">
+                🧸
+            </div>
+
+            <div class="osito">
+                🧸
+            </div>
+
+        </div>
+
+        <p>
+            Dos pequeños ositos para representar esos
+            abrazos de amistad que siempre vienen bien. 💙
+        </p>
+
+    </section>
+
+
+    <!-- =================================================
+         PISTA DE AUTOS
+    ================================================== -->
+
+    <section class="seccion">
+
+        <h2>
+            🏁 Una pequeña carrera para Omar
+        </h2>
+
+        <p>
+            Porque una página para ti no podía quedarse
+            sin unos autitos.
+        </p>
+
+
+        <div class="pista">
+
+            <img
+                src="./imagenes/imagen2.png.png"
+                alt="Auto de carrera"
+                class="auto-pista"
+            >
+
+            <img
+                src="./imagenes/imagen2.png.png"
+                alt="Auto de carrera"
+                class="auto-pista"
+            >
+
+            <img
+                src="./imagenes/imagen2.png.png"
+                alt="Auto de carrera"
+                class="auto-pista"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         SOBRE
+    ================================================== -->
+
+    <section class="seccion">
+
+        <h2>
+            💌 Hay algo más...
+        </h2>
+
+        <p>
+            Abre el sobre para encontrar otro pequeño mensaje.
+        </p>
+
+
+        <div class="sobre-contenedor">
+
+            <div
+                class="sobre"
+                id="botonMensaje"
+            >
+
+                <div class="sello">
+                    💙
+                </div>
+
+            </div>
+
+            <p class="texto-sobre">
+                💙 Haz clic sobre el sobre
+            </p>
+
+
+            <div
+                class="mensaje"
+                id="mensaje"
+            >
+
+                <p>
+                    Omar, gracias por ser una persona con quien
+                    puedo compartir risas, conversaciones y
+                    momentos que terminan siendo recuerdos
+                    muy bonitos.
+                </p>
+
+                <p>
+                    Valoro mucho nuestra amistad y espero que
+                    sigamos acumulando muchos más momentos
+                    divertidos, ocurrencias y buenas historias.
+                </p>
+
+                <p>
+                    Nunca olvides que eres una persona
+                    muy especial como amigo. 💙
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         FINAL
+    ================================================== -->
+
+    <section class="final">
+
+        <h2>
+            PARA OMAR 💙
+        </h2>
+
+        <p>
+            Con cariño, amistad y una pequeña colección
+            de flores, ositos y autitos. ✨
+        </p>
+
+        <p>
+            DE: Mariny Aquice Sonco💙
+        </p>
+
+    </section>
+
+
+</main>
+
+
+<script>
+
+/* =====================================================
+   ENTRAR
+===================================================== */
+
+const botonEntrar = document.getElementById("entrar");
+
+const portada = document.getElementById("inicio");
+
+const pagina = document.getElementById("pagina");
+
+
+botonEntrar.addEventListener("click", function() {
+
+    portada.classList.add("oculto");
+
+    setTimeout(function() {
+
+        portada.style.display = "none";
+
+        pagina.style.display = "block";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        crearFlores();
+
+        crearEstrellas();
+
+    }, 1000);
+
+});
+
+
+/* =====================================================
+   SOBRE
+===================================================== */
+
+const botonMensaje =
+    document.getElementById("botonMensaje");
+
+const mensaje =
+    document.getElementById("mensaje");
+
+
+botonMensaje.addEventListener("click", function() {
+
+    mensaje.classList.toggle("abierto");
+
+});
+
+
+/* =====================================================
+   FLORES FLOTANTES
+===================================================== */
+
+function crearFlores() {
+
+    const flores = [
+        "✿",
+        "❀",
+        "✦",
+        "✧",
+        "❁"
+    ];
+
+    setInterval(function() {
+
+        const flor =
+            document.createElement("div");
+
+        flor.className = "flotante";
+
+        flor.innerText =
+            flores[
+                Math.floor(
+                    Math.random() * flores.length
+                )
+            ];
+
+        flor.style.left =
+            Math.random() * 100 + "vw";
+
+        flor.style.fontSize =
+            (15 + Math.random() * 20) + "px";
+
+        flor.style.animationDuration =
+            (5 + Math.random() * 5) + "s";
+
+        document.body.appendChild(flor);
+
+        setTimeout(function() {
+
+            flor.remove();
+
+        }, 10000);
+
+    }, 700);
+
+}
+
+
+/* =====================================================
+   ESTRELLAS
+===================================================== */
+
+function crearEstrellas() {
+
+    const estrellas = [
+        "✦",
+        "✧",
+        "⋆",
+        "✶"
+    ];
+
+    for (let i = 0; i < 35; i++) {
+
+        const estrella =
+            document.createElement("div");
+
+        estrella.className = "flotante";
+
+        estrella.innerText =
+            estrellas[
+                Math.floor(
+                    Math.random() * estrellas.length
+                )
+            ];
+
+        estrella.style.left =
+            Math.random() * 100 + "vw";
+
+        estrella.style.top =
+            Math.random() * 100 + "vh";
+
+        estrella.style.fontSize =
+            (8 + Math.random() * 15) + "px";
+
+        estrella.style.animationDuration =
+            (6 + Math.random() * 8) + "s";
+
+        document.body.appendChild(estrella);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
